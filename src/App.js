@@ -42,12 +42,12 @@ function App() {
         message: `Client Name: ${clientName}, Client Email: ${clientEmail}`
       };
 
-      // emailjs.send('service_bertbi6', 'template_7krvv1i', templateParams, '-lptpfaQ3Ni46Quvg')
-      //   .then(function (response) {
-      //     console.log('SUCCESS!', response.status, response.text);
-      //   }, function (error) {
-      //     console.log('FAILED...', error);
-      //   });
+      emailjs.send('service_bertbi6', 'template_7krvv1i', templateParams, '-lptpfaQ3Ni46Quvg')
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+          console.log('FAILED...', error);
+        });
 
       setLeftIsActive(false);
       setRightIsActive(false);
