@@ -42,13 +42,15 @@ function App() {
         message: `Client Name: ${clientName}, Client Email: ${clientEmail}`
       };
 
-      emailjs.send('service_bertbi6', 'template_7krvv1i', templateParams, '-lptpfaQ3Ni46Quvg')
-        .then(function (response) {
-          console.log('SUCCESS!', response.status, response.text);
-        }, function (error) {
-          console.log('FAILED...', error);
-        });
+      // emailjs.send('service_bertbi6', 'template_7krvv1i', templateParams, '-lptpfaQ3Ni46Quvg')
+      //   .then(function (response) {
+      //     console.log('SUCCESS!', response.status, response.text);
+      //   }, function (error) {
+      //     console.log('FAILED...', error);
+      //   });
 
+      setLeftIsActive(false);
+      setRightIsActive(false);
       setShowThankYou(true);
     }
   }
@@ -143,7 +145,8 @@ function App() {
         </div>
 
         <div className="contact">
-          <div className="switch-button" ref={switchButton}>
+          {(isLeftActive || isRightActive) ?
+            <div className="switch-button" ref={switchButton}>
           <span
             ref={activeSwitch}
             className={isLeftActive ? 'active active-left' : 'active active-right'}>
@@ -163,6 +166,7 @@ function App() {
               I am a Developer
             </button>
           </div>
+            : ''}
 
           {isLeftActive ?
             <section className="client">
@@ -200,6 +204,8 @@ function App() {
               <h2>
                 Thank you!
               </h2>
+
+              <p>Once the Platform is live, you will be the first to know and try it out.</p>
             </section>
             : null}
         </div>

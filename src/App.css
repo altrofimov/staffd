@@ -212,10 +212,13 @@ input {
 }
 
 .thank-you {
-  display: none;
+  height: 358px;
+  text-align: center;
 }
 
-
+.thank-you h2 {
+  padding: 40px 0 20px 0;
+}
 
 
 
